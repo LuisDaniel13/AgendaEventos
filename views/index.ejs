@@ -1,0 +1,30 @@
+<%- include('partials/head.ejs') %>
+
+
+
+<div class="container">
+    <div class="mb-4 mt-4">   
+        <h1 class="text-center align-middle">Eventos disponibles <a href="/agregar"><i class="bi bi-plus-circle-fill"></i></a></h1>
+    </div>
+
+    <!--Card de eventos-->
+    <% eventos.forEach( (evento) => { %>
+    <div class="card mb-3">
+        <div class="card-header d-flex justify-content-between">
+            <h4><%= evento.eventoNombre %></h3>
+            <h4><a href="/borrar/<%= evento._id %>" class="del bi bi-calendar-x-fill"></a></h4>
+          </div>
+          <div class="card-body">
+            <h2 class="card-title">Informacion del evento</h5>
+            <p class="card-text"><%= evento.Informacion %></p>
+            <a href="<%= evento.musica %>" class="btn btn-outline-dark"><i class="bi bi-music-note"></i> Música</a>
+        </div>
+        <div class="card-footer text-muted d-flex justify-content-between">
+            <%= evento.fecha %>
+            <p><b>Lugar: </b><i><%= evento.lugar %></i></p>
+        </div>
+    </div>
+    <% }) %>
+</div>
+
+<%- include('partials/footer.ejs') %>

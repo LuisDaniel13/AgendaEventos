@@ -1,0 +1,37 @@
+<%- include('partials/head.ejs') %>
+
+<div class="container mt-3">
+    <div class="text-center text-title">    
+        <h1><a href="/"><i class="bi bi-arrow-left-circle-fill"></i></a> <%= title %></h1>
+    </div>
+    <div class="card card-gris shadow-sm p-3 mb-5 bg-body rounded">
+        <form action="/crear" method="POST">
+            <div class="mb-3">
+                <label class="form-label">Nombre del Evento</label>
+                <input type="text" name="eventoNombre" required id="eventoNombre" class="form-control" placeholder="Ejemplo: Boda de Juan">
+            </div>
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label class="form-label">Fecha del Evento</label>
+                    <input type="date" name="fecha" id="fecha" required class="form-control">
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label class="form-label">Lugar del Evento</label>
+                    <input type="text" name="lugar" id="lugar" required placeholder="Ejemplo: Hotel Emporio" class="form-control">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Información del evento</label>
+                <textarea name="Informacion" id="Informacion" required placeholder="Añade aqui datos necesarios acerca del evento" id="" cols="30" rows="10" class="form-control"></textarea>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Música</label>
+                <input type="text" name="musica" id="musica" placeholder="Musica de ceremonia" class="form-control">
+            </div>
+    
+            <button type="submit" class="btn btn-outline-success"><i class="bi bi-sd-card"></i> Guardar evento</button>
+        </form>
+    </div>
+</div>
+
+<%- include('partials/footer.ejs') %>

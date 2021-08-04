@@ -1,0 +1,16 @@
+body{
+    background-color:    #f2f2f2 ;
+}
+h1{
+    color:  #303030;
+}
+.card{
+    border-radius: 10px;
+}
+.card-gris{
+    background:   #fbfbfb !important;
+    border-radius: 1rem !important;
+}
+.del{
+    color: red;
+}
