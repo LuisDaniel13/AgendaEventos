@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-require('dotenv').config({path: 'variables.env'});
+//require('dotenv').config({path: 'variables.env'});
 
 console.log(process.env.URLDB);
 
@@ -9,8 +9,6 @@ mongoose.connect(process.env.URLDB,{
     useFindAndModify: false,
     useCreateIndex: true
 })
-
-
 
 
 const db = mongoose.connection
