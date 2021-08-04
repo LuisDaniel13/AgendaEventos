@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
-const url = 'mongodb://localhost/AppDB'
 
-mongoose.connect(url,{
+mongoose.connect(process.env.URL_DB,{
     useNewUrlParser:true,
     useUnifiedTopology:true,
     useFindAndModify: false,
