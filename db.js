@@ -1,12 +1,17 @@
 const mongoose = require('mongoose')
 require('dotenv').config({path: 'variables.env'});
 
-mongoose.connect(URL_DB,{
+console.log(process.env.URLDB);
+
+mongoose.connect(process.env.URLDB,{
     useNewUrlParser:true,
     useUnifiedTopology:true,
     useFindAndModify: false,
     useCreateIndex: true
 })
+
+
+
 
 const db = mongoose.connection
 db.on('error', console.error.bind(console, 'Error al conectar a MongoDB'))

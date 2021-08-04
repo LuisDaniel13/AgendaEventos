@@ -14,3 +14,7 @@ h1{
 .del{
     color: red;
 }
+.decoracion-h1{
+    background: white;
+    border-radius: 12px;
+}
