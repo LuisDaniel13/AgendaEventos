@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 //require('dotenv').config({path: 'variables.env'});
 
-console.log(process.env."mongodb+srv://root:tXQ0Qh9eQTr5p0Up@cluster0.eemyp.mongodb.net/AppDB?retryWrites=true&w=majority");
+console.log(process.env.URLDB);
 
-mongoose.connect(process.env."mongodb+srv://root:tXQ0Qh9eQTr5p0Up@cluster0.eemyp.mongodb.net/AppDB?retryWrites=true&w=majority",{
+mongoose.connect(process.env.URLDB,{
    useNewUrlParser: true, useUnifiedTopology: true
     /* useNewUrlParser:true,
     useUnifiedTopology:true,
