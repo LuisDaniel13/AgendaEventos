@@ -1,20 +1,10 @@
-const mongoose = require('mongoose')
-require('dotenv').config({path: 'variables.env'});
+const { MongoClient } = require('mongodb');
+const uri = "mongodb+srv://root:tXQ0Qh9eQTr5p0Up@cluster0.eemyp.mongodb.net/AppDB?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
 
-console.log(process.env.URLDB);
-
-mongoose.connect(process.env.URLDB,{
-    useNewUrlParser:true,
-    useUnifiedTopology:true,
-    useFindAndModify: false,
-    useCreateIndex: true
-})
-
-
-const db = mongoose.connection
-db.on('error', console.error.bind(console, 'Error al conectar a MongoDB'))
-db.once('open', function callback(){
-    console.log('Conectado a MongoDB correctamente')
-})
-
-module.exports = db
+module.exports = client
