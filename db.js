@@ -4,10 +4,11 @@ const mongoose = require('mongoose')
 console.log(process.env.URLDB);
 
 mongoose.connect(process.env.URLDB,{
-    useNewUrlParser:true,
+   useNewUrlParser: true, useUnifiedTopology: true
+    /* useNewUrlParser:true,
     useUnifiedTopology:true,
     useFindAndModify: false,
-    useCreateIndex: true
+    useCreateIndex: true */
 })
 
 const db = mongoose.connection
